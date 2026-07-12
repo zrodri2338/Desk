@@ -3,9 +3,9 @@
 /*
 Name: Zulisa Cruz
 Date Completed: July 2026
-Program: Desks
-Description: Calculates the price of a desk based on wood type and number of drawers.
-Resources Used: Course materials and Microsoft C# documentation.
+Description: This program calculates the price of a desk based
+on the type of wood and the number of drawers.
+Resources Used: Course materials and class notes.
 */
 
 namespace Desks
@@ -14,18 +14,11 @@ namespace Desks
     {
         static void Main(string[] args)
         {
-            int drawers;
-            char woodType;
-            double cost;
+            int drawers = GetDrawers();
+            char woodType = GetWoodType();
+            double cost = CalculateCost(drawers, woodType);
 
-            drawers = GetDrawers();
-            woodType = GetWoodType();
-
-            cost = CalculateCost(drawers, woodType);
-
-            DisplayResults(drawers, woodType, cost);
-
-            Console.ReadKey();
+            DisplayDetails(drawers, woodType, cost);
         }
 
         static int GetDrawers()
@@ -37,7 +30,9 @@ namespace Desks
         static char GetWoodType()
         {
             Console.Write("Enter wood type (m = Mahogany, o = Oak, p = Pine): ");
-            return char.ToLower(Console.ReadLine()[0]);
+
+            string input = Console.ReadLine() ?? "";
+            return char.ToLower(input[0]);
         }
 
         static double CalculateCost(int drawers, char woodType)
@@ -45,30 +40,42 @@ namespace Desks
             double basePrice;
 
             if (woodType == 'p')
+            {
                 basePrice = 100;
+            }
             else if (woodType == 'o')
+            {
                 basePrice = 140;
+            }
             else
+            {
                 basePrice = 180;
+            }
 
             return basePrice + (drawers * 30);
         }
 
-        static void DisplayResults(int drawers, char woodType, double cost)
+        static void DisplayDetails(int drawers, char woodType, double cost)
         {
             string woodName;
 
             if (woodType == 'p')
+            {
                 woodName = "Pine";
+            }
             else if (woodType == 'o')
+            {
                 woodName = "Oak";
+            }
             else
+            {
                 woodName = "Mahogany";
+            }
 
-            Console.WriteLine("\nDesk Order Summary");
-            Console.WriteLine("Wood Type: " + woodName);
-            Console.WriteLine("Number of Drawers: " + drawers);
-            Console.WriteLine("Total Cost: $" + cost);
+            Console.WriteLine("\nDesk Order Details");
+            Console.WriteLine($"Wood type: {woodName}");
+            Console.WriteLine($"Number of drawers: {drawers}");
+            Console.WriteLine($"Final price: {cost:C}");
         }
     }
 }
