@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Desk")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e13d036c987cb10e83e37a53c90806926feb9d2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Desk")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Desk")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
